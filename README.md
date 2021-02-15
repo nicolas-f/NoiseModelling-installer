@@ -9,7 +9,8 @@ To use :
 
 
 1. Compile the au3 using Autoit. You should get a NoiseModelling.exe file
-2. Compile the installer.iss file using InnoSetup. You should get the NoiseModelling_3.3.1_install.exe
+2. Edit the installer.iss to replace my Windows paths with yours.
+3. Compile the installer.iss file using InnoSetup. You should get the NoiseModelling_3.3.1_install.exe
 
 If you change the jre version or the NoiseModelling version, you'll need to edit the au3 script and the iss script accordingly.
 
