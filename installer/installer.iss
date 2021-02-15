@@ -2,10 +2,11 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "NoiseModelling"
-#define MyAppVersion "3.3.1"
+#define MyAppVersion "3.3.2"
 #define MyAppPublisher "NoisePlanet"
-#define MyAppURL "https://noise-planet.org/noisemodelling.html"
+#define MyAppURL "https://noise-planet.org/noisemodelling.html"     
 #define MyAppExeName "NoiseModelling.exe"
+#define JRE "jre1.8.0_281"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -20,12 +21,12 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\valen\Documents\IFSTTAR\NoiseModelling_install\installer\LICENSE
+LicenseFile=.\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
-OutputDir=C:\Users\valen\Documents\IFSTTAR\NoiseModelling_install\installer
-OutputBaseFilename=NoiseModelling_3.3.1_install
-SetupIconFile=C:\Users\valen\Documents\IFSTTAR\NoiseModelling_install\icon.ico
+PrivilegesRequired=lowest
+OutputDir=.\
+OutputBaseFilename=NoiseModelling_{#MyAppVersion}_install
+SetupIconFile=..\icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -37,9 +38,9 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\valen\Documents\IFSTTAR\NoiseModelling_install\NoiseModelling.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\valen\Documents\IFSTTAR\NoiseModelling_install\jre1.8.0_281\*"; DestDir: "{app}\jre1.8.0_281"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\valen\Documents\IFSTTAR\NoiseModelling_install\NoiseModelling_3.3.1\*"; DestDir: "{app}\NoiseModelling_3.3.1"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\NoiseModelling.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\{#JRE}\*"; DestDir: "{app}\{#JRE}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\NoiseModelling_{#MyAppVersion}\*"; DestDir: "{app}\NoiseModelling_{#MyAppVersion}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
