@@ -7,6 +7,8 @@
 #define MyAppURL "https://noise-planet.org/noisemodelling.html"     
 #define MyAppExeName "NoiseModelling.exe"
 #define JRE "jre1.8.0_281"
+#define JRE_PATH "C:\Program Files\Java\jre1.8.0_281"
+#define NOISEMODELLING_PATH "C:\Program Files\NoiseModelling_{#MyAppVersion}"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -39,8 +41,8 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 
 [Files]
 Source: "..\NoiseModelling.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\{#JRE}\*"; DestDir: "{app}\{#JRE}"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "..\NoiseModelling_{#MyAppVersion}\*"; DestDir: "{app}\NoiseModelling_{#MyAppVersion}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#JRE_PATH}\*"; DestDir: "{app}\{#JRE}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "{#NOISEMODELLING_PATH}\*"; DestDir: "{app}\NoiseModelling_{#MyAppVersion}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
