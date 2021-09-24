@@ -6,4 +6,4 @@
 
 EnvSet("JAVA_HOME", @WorkingDir & "\jre1.8.0_281")
 FileChangeDir(".\NoiseModelling_3.3.2\bin")
-Run(".\startup.bat")
+Run(".\startup_windows.bat")
